@@ -14,6 +14,6 @@ class FlatUIAsset extends AssetBundle
         'js/flat-ui.js',
     ];
     public $depends = [
-        'yii\bootstrap\BootstrapAsset',
+        'yii\bootstrap5\BootstrapAsset',
     ];
 }

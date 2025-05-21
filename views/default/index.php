@@ -7,7 +7,7 @@ use yii\widgets\Pjax;
 /* @var $this yii\web\View */
 /* @var $schemaProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Schemas';
+$this->title = 'Схемы';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 

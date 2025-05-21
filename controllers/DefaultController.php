@@ -131,8 +131,8 @@ class DefaultController extends Controller
         }
 
         if ($ajaxValidation) return array_merge(
-            ActiveForm::validate($schema),
-            call_user_func_array('\yii\widgets\ActiveForm::validate',$generators)
+            //ActiveForm::validate($schema),
+            //call_user_func_array('\yii\widgets\ActiveForm::validate',$generators)
         );
 
         if ($schema->save() === false) return;

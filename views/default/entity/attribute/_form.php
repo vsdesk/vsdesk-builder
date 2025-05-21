@@ -1,8 +1,8 @@
 <?php
 
 use yii\helpers\Html;
-use yii\bootstrap\ActiveForm;
-use yii\bootstrap\Modal;
+use yii\bootstrap5\ActiveForm;
+use yii\bootstrap5\Modal;
 use yii\helpers\Url;
 
 /* @var $this yii\web\View */
@@ -25,13 +25,13 @@ $rid = uniqid();
     Modal::begin([
         'id' => 'attribute-' . ($model->isNewRecord ? 'new-'.$rid : $model->id.'-'.$rid),
         'size' => Modal::SIZE_LARGE,
-        'header' =>  $model->isNewRecord ? '<h6>Create Attribute</h6>' : '<h6>Update Attribute '.$model->name.'</h6>',
+        'title' =>  $model->isNewRecord ? '<h6>Создать атрибут</h6>' : '<h6>Редактировать атрибут '.$model->name.'</h6>',
         'toggleButton' => $model->isNewRecord ? 
             ['label' => '<span class="fui-plus"></span>', 'class' => 'btn btn-primary pull-right'] :
             ['label' => '', 'tag' => 'a', 'class' => 'glyphicon glyphicon-pencil text-default', 'data-pjax' => 0] ,
         'footer' => 
             Html::resetButton('Reset', ['class' => 'btn btn-default']) .
-            Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-primary' : 'btn btn-info'])
+            Html::submitButton($model->isNewRecord ? 'Создать' : 'Сохранить', ['class' => $model->isNewRecord ? 'btn btn-primary' : 'btn btn-info'])
     ]);
     ?>
 

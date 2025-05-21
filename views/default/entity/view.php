@@ -9,7 +9,7 @@ use yii\widgets\Pjax;
 /* @var $model vsdesk\models\Entity */
 
 $this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Schemas', 'url' => ['index'], 'data-pjax'=> 0];
+$this->params['breadcrumbs'][] = ['label' => 'Схемы', 'url' => ['index'], 'data-pjax'=> 0];
 $this->params['breadcrumbs'][] = ['label' => $model->schema->name, 'url' => ['view', 'id' => $model->schema->id], 'data-pjax'=> 0];
 $this->params['breadcrumbs'][] = $this->title;
 
@@ -22,13 +22,13 @@ $entity_id = $model->id;
         <?php Pjax::begin(['id' => 'entity-title', 'options' => ['tag' => 'span']]); ?>
             <?= Html::encode($this->title) ?>
         <?php Pjax::end(); ?>
-
+    </h2>
         <span class="pull-right">
             <?php Pjax::begin(['id' => 'entity-form', 'options' => ['tag' => 'span']]); ?>
                 <?= $this->render('_form', ['model' => $model, 'id' => $model->id]) ?>
             <?php Pjax::end(); ?>
 
-            <?= Html::a('<span class="fui-trash"></span> DELETE', ['delete-entity', 'id' => $model->id], [
+            <?= Html::a('<span class="fui-trash"></span> УДАЛИТЬ', ['delete-entity', 'id' => $model->id], [
                 'class' => 'btn btn-danger',
                 'data' => [
                     'confirm' => 'Are you sure you want to delete the entity "'.$model->name.'" ?',
@@ -39,8 +39,6 @@ $entity_id = $model->id;
                 <span class="fui-info-circle"></span>
             </a>
         </span>
-
-    </h2>
 
     <?php Pjax::begin(['id' => 'entity-info', 'options' => ['style' => ['display' => 'none']]]); ?> 
         <?= DetailView::widget([
@@ -58,13 +56,13 @@ $entity_id = $model->id;
 <div class="attribute-index">
 
     <h4>
-        Attributes
+        Атрибуты
+    </h4>
         <div class="pull-right">
             <?php Pjax::begin(['id' => 'attribute-form', 'options' => ['tag' => 'span']]); ?>
                 <?= $this->render('attribute/_form', ['model' => $attribute]) ?>
             <?php Pjax::end(); ?>
         </div>
-    </h4>
 
     <?php Pjax::begin(['id' => 'attribute-list']); ?> 
         <?= GridView::widget([
@@ -72,7 +70,7 @@ $entity_id = $model->id;
             'tableOptions' => ['class' => 'table table-hover'],
             'formatter' => ['class' => 'yii\i18n\Formatter','nullDisplay' => '<span class="text-silent">&Oslash;</span>'],
             'showOnEmpty' => false,
-            'emptyText' => 'Has no attributes. click the <b>(+)</b> button to start creating them.',
+            'emptyText' => 'Нет атрибутов. Нажмите кнопку <b>(+)</b> для создания.',
             'summaryOptions' => ['class' => 'summary small'],
             'layout' => "{items}\n{summary}\n{pager}",
             'columns' => [
@@ -154,20 +152,20 @@ $entity_id = $model->id;
 <div class="relationship-index">
     
     <h4>
-        Relations
+        Связи
+    </h4>
         <div class="pull-right">
             <?php Pjax::begin(['id' => 'relationship-form', 'options' => ['tag' => 'span']]); ?>
                 <?= $this->render('relationship/_form', ['model' => $relationship]) ?>
             <?php Pjax::end(); ?>
         </div>
-    </h4>
 
      <?php Pjax::begin(['id' => 'relationship-list']); ?> 
         <?= GridView::widget([
             'dataProvider' => $relationshipProvider,
             'tableOptions' => ['class' => 'table table-hover'],
             'showOnEmpty' => false,
-            'emptyText' => 'Has no relations.',
+            'emptyText' => 'Нет связей.',
             'summaryOptions' => ['class' => 'summary small'],
             'layout' => "{items}\n{summary}\n{pager}",
             'columns' => [

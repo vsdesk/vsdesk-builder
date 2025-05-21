@@ -1,8 +1,8 @@
 <?php
 
 use yii\helpers\Html;
-use yii\bootstrap\ActiveForm;
-use yii\bootstrap\Modal;
+use yii\bootstrap5\ActiveForm;
+use yii\bootstrap5\Modal;
 use yii\helpers\ArrayHelper;
 
 /* @var $this yii\web\View */
@@ -24,13 +24,13 @@ use yii\helpers\ArrayHelper;
     <?php
     Modal::begin([
         'id' => 'relationship-' . ($model->isNewRecord ? 'new' : $model->id),
-        'header' =>  $model->isNewRecord ? "<h6>add new relation to <b><i>".$model->entity->name."</i></b></h6>" : "<h6>update <b><i>".$model->entity->name."-".$model->relatedTo->name."</i></b> relationship</h6>",
+        'title' =>  $model->isNewRecord ? "<h6>добавить связи к <b><i>".$model->entity->name."</i></b></h6>" : "<h6>update <b><i>".$model->entity->name."-".$model->relatedTo->name."</i></b> relationship</h6>",
         'toggleButton' => $model->isNewRecord ? 
             ['label' => '<span class="fui-plus"></span>', 'class' => 'btn btn-primary pull-right'] :
             ['label' => '', 'tag' => 'a', 'class' => 'glyphicon glyphicon-pencil'] ,
         'footer' => 
             Html::resetButton('Reset', ['class' => 'btn btn-default']) .
-            Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-primary' : 'btn btn-info'])
+            Html::submitButton($model->isNewRecord ? 'Создать' : 'Сохранить', ['class' => $model->isNewRecord ? 'btn btn-primary' : 'btn btn-info'])
     ]);
     ?>
 

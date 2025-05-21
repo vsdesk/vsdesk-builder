@@ -1,8 +1,8 @@
 <?php
-use yii\bootstrap\NavBar;
-use yii\bootstrap\Nav;
+use yii\bootstrap5\NavBar;
+use yii\bootstrap5\Nav;
 use yii\helpers\Html;
-use yii\widgets\Breadcrumbs;
+use yii\bootstrap5\Breadcrumbs;
 use yii\widgets\Pjax;
 
 use vsdesk\builder\BuilderAsset;
@@ -28,16 +28,15 @@ $asset = BuilderAsset::register($this);
     <div class="wrap">
         <?php
         NavBar::begin([
-            'brandLabel' => 'Schema Builder',
+            'brandLabel' => 'Констуктор БД',
             'brandUrl' => ['default/index'],
             'options' => ['class' => 'navbar-inverse navbar-fixed-top'],
         ]);
         echo Nav::widget([
             'options' => ['class' => 'nav navbar-nav navbar-right'],
             'items' => [
-                ['label' => 'Home', 'url' => ['default/index']],
-                ['label' => 'Application', 'url' => Yii::$app->homeUrl],
-                ['label' => 'Github Repo', 'url' => 'https://github.com/vsdesk/vsdesk-builder']
+                ['label' => 'Главная', 'url' => ['default/index']],
+                ['label' => 'Приложение', 'url' => Yii::$app->homeUrl]
             ],
         ]);
         NavBar::end();
@@ -46,7 +45,7 @@ $asset = BuilderAsset::register($this);
         <div class="container">
             <?php Pjax::begin(['id' => 'breadcrumbs', 'options' => ['tag' => 'span']]); ?>
                 <?= Breadcrumbs::widget([
-                    'homeLink' => ['label' => 'Home', 'url' => ['default/index']],
+                    'homeLink' => ['label' => 'Главная', 'url' => ['default/index']],
                     'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
                 ]) ?>
             <?php Pjax::end(); ?>
@@ -56,9 +55,7 @@ $asset = BuilderAsset::register($this);
 
     <footer class="footer">
         <div class="container">
-            <p class="pull-left">&copy; SchemaBuilder <?= date('Y') ?></p>
-
-            <p class="pull-right"><?= Yii::powered() ?></p>
+            <p class="pull-left">&copy; Иванов Александр <?= date('Y') ?></p>
         </div>
     </footer>
 

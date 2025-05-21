@@ -9,7 +9,7 @@ use yii\widgets\Pjax;
 /* @var $schema vsdesk\models\Schema */
 
 $this->title = $schema->name;
-$this->params['breadcrumbs'][] = ['label' => 'Schemas', 'url' => ['index'], 'data-pjax'=> 0];
+$this->params['breadcrumbs'][] = ['label' => 'Схемы', 'url' => ['index'], 'data-pjax'=> 0];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="schema-view">
@@ -24,10 +24,10 @@ $this->params['breadcrumbs'][] = $this->title;
             <?= $this->render('_form', ['schema' => $schema]) ?>
         <?php Pjax::end(); ?>
 
-        <?= Html::a('<span class="fui-trash"></span> DELETE', ['delete', 'id' => $schema->id], [
+        <?= Html::a('<span class="fui-trash"></span> УДАЛИТЬ', ['delete', 'id' => $schema->id], [
             'class' => 'btn btn-danger mt20 mb20',
             'data' => [
-                'confirm' => 'Are you sure you want to completely delete Schema "'.$schema->name.'" ?',
+                'confirm' => 'Вы уверены что хотите удалить схему "'.$schema->name.'" ?',
                 'method' => 'post',
             ],
         ]) ?>
@@ -62,7 +62,8 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="entity-index">
     <div >
         <h4>
-            Entities
+            Сущности
+            </h4>
             <div class="pull-right">
                 <?php Pjax::begin(['id' => 'entity-form', 'options' => ['tag' => 'span']]); ?>
                     <?= $this->render('entity/_form', ['model' => $entity]) ?>
@@ -73,7 +74,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     <?= $this->render('entity/_search', ['model' => $entitySearchModel, 'schema' => $schema]) ?>
                 </span>
             </div>
-        </h4>
+        
 
         <?php Pjax::begin(['id' => 'entity-list']); ?> 
             <?= ListView::widget([

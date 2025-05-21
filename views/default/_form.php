@@ -1,8 +1,8 @@
 <?php
 
 use yii\helpers\Html;
-use yii\bootstrap\ActiveForm;
-use yii\bootstrap\Modal;
+use yii\bootstrap5\ActiveForm;
+use yii\bootstrap5\Modal;
 use yii\gii\generators\model\Generator;
 
 /* @var $this yii\web\View */
@@ -15,7 +15,7 @@ $schemaForms = $schema->loadForms();
 <span class="schema-form">
 
     <?php $form = ActiveForm::begin([
-        'options' => ['data-type' => 'ajax', 'style' => ['display' => 'inherit']],
+        'options' => ['data-type' => 'ajax', 'style' => ['display' => 'block']],
     	  'action' => $schema->isNewRecord ? ['create-schema'] : ['update-schema', 'id' => $schema->id],
         // https://stackoverflow.com/questions/28756397/yii2-conditional-validator-always-returns-required
         'enableClientValidation' => false,
@@ -25,19 +25,19 @@ $schemaForms = $schema->loadForms();
     <?php Modal::begin([
         'id' => 'schema-' . ($schema->isNewRecord ? 'new' : $schema->id),
         'options' => ['class' => 'modal modal-fullscreen fade', 'data-backdrop' => 'static'],
-        'header' =>  $schema->isNewRecord ? 
-            '<h6 class="text-center">Create New Schema</h6>' : '<h6 class="text-center">Update Schema '.$schema->name.'</h6>',
+        'title' =>  $schema->isNewRecord ? 
+            '<h6 class="text-center">Создать новую схему</h6>' : '<h6 class="text-center">Изменить схему '.$schema->name.'</h6>',
         'toggleButton' => $schema->isNewRecord ? 
-            ['label' => '<span class="fui-plus"></span> NEW', 'class' => 'btn btn-primary pull-right mt20 mb20'] :
-            ['label' => '<span class="fui-new"></span> UPDATE', 'class' => 'btn btn-info mt20 mb20'] ,
+            ['label' => '<span class="fui-plus"></span> ДОБАВИТЬ', 'class' => 'btn btn-primary pull-right mt20 mb20'] :
+            ['label' => '<span class="fui-new"></span> ИЗМЕНИТЬ', 'class' => 'btn btn-info mt20 mb20'] ,
         'footer' => 
             Html::resetButton('Reset all', ['class' => 'btn btn-default']) .
-            Html::submitButton($schema->isNewRecord ? 'Create' : 'Update', ['class' => $schema->isNewRecord ? 'btn btn-primary' : 'btn btn-info'])
+            Html::submitButton($schema->isNewRecord ? 'Создать' : 'Сохранить', ['class' => $schema->isNewRecord ? 'btn btn-primary' : 'btn btn-info'])
     ]); ?>
 
   <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="active"><a href="#main" aria-controls="main" role="tab" data-toggle="tab">Schema</a></li>
+    <li role="presentation" class="active"><a href="#main" aria-controls="main" role="tab" data-toggle="tab">Схема</a></li>
     <?php foreach ($schemaForms as $fname => $fobj) { ?>
         <li role="presentation"><a href="#<?= $fname ?>" aria-controls="<?= $fname ?>" role="tab" data-toggle="tab"><?= $fname ?></a></li>
     <?php } ?>

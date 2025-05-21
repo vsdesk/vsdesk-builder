@@ -1,8 +1,8 @@
 <?php
 
 use yii\helpers\Html;
-use yii\bootstrap\ActiveForm;
-use yii\bootstrap\Modal;
+use yii\bootstrap5\ActiveForm;
+use yii\bootstrap5\Modal;
 
 /* @var $this yii\web\View */
 /* @var $model vsdesk\models\Entity */
@@ -23,14 +23,14 @@ use yii\bootstrap\Modal;
         'id' => 'entity-' . ($model->isNewRecord ? 'new' : $model->id),
         'size' => modal::SIZE_LARGE,
         'options' => ['data-backdrop' => 'false', 'data-dismiss' => 'modal' ],
-        'header' =>  $model->isNewRecord ? 
-            '<h6 class="text-center">Create & add a new Entity to Schema '.$model->schema->name.'</h6>' : '<h6 class="text-center">Update Entity '.$model->name.'</h6>',
+        'title' =>  $model->isNewRecord ? 
+            '<h6 class="text-center">Создать и добавить новую сущность к схеме '.$model->schema->name.'</h6>' : '<h6 class="text-center">Редактировать сущность '.$model->name.'</h6>',
         'toggleButton' => $model->isNewRecord ? 
-            ['label' => '<span class="fui-plus"></span> NEW', 'class' => 'btn btn-primary pull-right'] :
-            ['label' => '<span class="fui-new"></span> UPDATE', 'class' => 'btn btn-info'] ,
+            ['label' => '<span class="fui-plus"></span> ДОБАВИТЬ', 'class' => 'btn btn-primary pull-right'] :
+            ['label' => '<span class="fui-new"></span> ИЗМЕНИТЬ', 'class' => 'btn btn-info'] ,
         'footer' => 
             Html::resetButton('Reset', ['class' => 'btn btn-default']) .
-            Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-primary' : 'btn btn-info'])
+            Html::submitButton($model->isNewRecord ? 'Создать' : 'Сохранить', ['class' => $model->isNewRecord ? 'btn btn-primary' : 'btn btn-info'])
     ]);
     ?>
 
