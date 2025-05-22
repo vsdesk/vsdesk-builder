@@ -15,7 +15,7 @@ class Generator extends \vsdesk\builder\Generator
     {
         return [
             'db' => 'db',
-            'ns' => 'app\models',
+            'ns' => 'common\models\v1',
             'baseClass' => 'yii\db\ActiveRecord',
             'generateRelations' => 'all',
             'useSchemaName' => true,

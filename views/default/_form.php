@@ -24,22 +24,37 @@ $schemaForms = $schema->loadForms();
 
     <?php Modal::begin([
         'id' => 'schema-' . ($schema->isNewRecord ? 'new' : $schema->id),
-        'options' => ['class' => 'modal modal-fullscreen fade', 'data-backdrop' => 'static'],
+        'options' => ['class' => 'modal fade', 'data-backdrop' => 'static'],
         'title' =>  $schema->isNewRecord ? 
             '<h6 class="text-center">Создать новую схему</h6>' : '<h6 class="text-center">Изменить схему '.$schema->name.'</h6>',
         'toggleButton' => $schema->isNewRecord ? 
             ['label' => '<span class="fui-plus"></span> ДОБАВИТЬ', 'class' => 'btn btn-primary pull-right mt20 mb20'] :
             ['label' => '<span class="fui-new"></span> ИЗМЕНИТЬ', 'class' => 'btn btn-info mt20 mb20'] ,
         'footer' => 
-            Html::resetButton('Reset all', ['class' => 'btn btn-default']) .
+            Html::resetButton('Сбросить все', ['class' => 'btn btn-default']) .
             Html::submitButton($schema->isNewRecord ? 'Создать' : 'Сохранить', ['class' => $schema->isNewRecord ? 'btn btn-primary' : 'btn btn-info'])
     ]); ?>
 
   <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="active"><a href="#main" aria-controls="main" role="tab" data-toggle="tab">Схема</a></li>
+    <li role="presentation" class="nav-item"><a class="nav-link green" href="#main" aria-controls="main" role="tab" data-toggle="tab">Схема</a></li>
     <?php foreach ($schemaForms as $fname => $fobj) { ?>
-        <li role="presentation"><a href="#<?= $fname ?>" aria-controls="<?= $fname ?>" role="tab" data-toggle="tab"><?= $fname ?></a></li>
+        <?php 
+        $sfname = NULL;
+        if($fname == 'Model'){
+            $sfname = 'Модель';
+        }
+        if($fname == 'Module'){
+            $sfname = 'Модуль';
+        }
+        if($fname == 'Migration'){
+            $sfname = 'Миграция';
+        }
+        if($fname == 'Crud'){
+            $sfname = 'Код';
+        }
+        ?>
+        <li role="presentation" class="nav-item"><a class="nav-link" href="#<?= $fname ?>" aria-controls="<?= $fname ?>" role="tab" data-toggle="tab"><?= $sfname ?></a></li>
     <?php } ?>
   </ul>
 

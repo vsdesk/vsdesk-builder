@@ -97,8 +97,8 @@ class Schema extends \yii2tech\filedb\ActiveRecord
     {
         return [
             'id' => 'Primary Key',
-            'name' => 'Name',
-            'isModule' => 'Built as Module',
+            'name' => 'Имя схемы',
+            'isModule' => 'Построить как модуль',
         ];
     }
 

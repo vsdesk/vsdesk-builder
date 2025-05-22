@@ -171,7 +171,7 @@ abstract class Generator extends \yii2tech\filedb\ActiveRecord
             'appconfig' => 'Application Config File',
             'enableI18N' => 'Enable I18N',
             'messageCategory' => 'Message Category',
-            'template' => 'template',
+            'template' => 'Шаблон',
         ];
     }
 

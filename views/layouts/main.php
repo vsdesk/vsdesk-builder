@@ -28,9 +28,9 @@ $asset = BuilderAsset::register($this);
     <div class="wrap">
         <?php
         NavBar::begin([
-            'brandLabel' => 'Констуктор БД',
+            'brandLabel' => 'Конструктор кода и БД',
             'brandUrl' => ['default/index'],
-            'options' => ['class' => 'navbar-inverse navbar-fixed-top'],
+            'options' => ['class' => 'navbar navbar-inverse navbar-fixed-top'],
         ]);
         echo Nav::widget([
             'options' => ['class' => 'nav navbar-nav navbar-right'],

@@ -30,7 +30,7 @@ $rid = uniqid();
             ['label' => '<span class="fui-plus"></span>', 'class' => 'btn btn-primary pull-right'] :
             ['label' => '', 'tag' => 'a', 'class' => 'glyphicon glyphicon-pencil text-default', 'data-pjax' => 0] ,
         'footer' => 
-            Html::resetButton('Reset', ['class' => 'btn btn-default']) .
+            Html::resetButton('Сбросить', ['class' => 'btn btn-default']) .
             Html::submitButton($model->isNewRecord ? 'Создать' : 'Сохранить', ['class' => $model->isNewRecord ? 'btn btn-primary' : 'btn btn-info'])
     ]);
     ?>

@@ -13,23 +13,23 @@ class Generator extends \vsdesk\builder\Generator
             'baseViewPath' => null,
             'baseControllerClass' => 'yii\web\Controller',
             'indexWidgetType' => 'grid',
-            'enablePjax' => false,
-            'modelNamespace' => 'app\models',
-            'controllerNamespace' => 'app\controllers',
-            'searchModelNamespace' => null,
+            'enablePjax' => true,
+            'modelNamespace' => 'common\models\v1',
+            'controllerNamespace' => 'backend\controllers',
+            'searchModelNamespace' => 'common\models\v1\search',
         ];
     }
 
     public function attributeLabels()
     {
         return array_merge(parent::attributeLabels(), [
-            'baseViewPath' => 'Base View Path',
-            'baseControllerClass' => 'Base Controller Class',
-            'indexWidgetType' => 'Widget Used in Index Page',
-            'searchModelClass' => 'Search Model Class',
-            'enablePjax' => 'Enable Pjax',
-            'modelNamespace' => 'Model Namespace',
-            'controllerNamespace' => 'Controller Namespace',
+            'baseViewPath' => 'Базовый путь для Вида (View)',
+            'baseControllerClass' => 'Базовый Class контроллера',
+            'indexWidgetType' => 'Виджет используемый на странице модели',
+            'searchModelClass' => 'Class модели для поиска',
+            'enablePjax' => 'Использовать Pjax',
+            'modelNamespace' => 'Namespace модели',
+            'controllerNamespace' => 'Namespace контроллера',
         ]);
     }
 

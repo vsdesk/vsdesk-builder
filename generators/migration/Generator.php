@@ -28,11 +28,11 @@ class Generator extends \vsdesk\builder\Generator
 	public function attributeLabels()
     {
         return array_merge(parent::attributeLabels(), [
-            'db' => 'Migration Database',
-            'migrationTable' => 'Migration Table',
-            'migrationPath' => 'Migration Path',
-            'templateFile' => 'Template File',
-            'useTablePrefix' => 'Use Table Prefix',
+            'db' => 'База миграции',
+            'migrationTable' => 'Таблица миграции',
+            'migrationPath' => 'Путь миграции',
+            'templateFile' => 'Файл шаблона',
+            'useTablePrefix' => 'Использовать префикс таблицы',
         ]);
     }
 
@@ -51,7 +51,7 @@ class Generator extends \vsdesk\builder\Generator
     public function attributeHints()
     {
         return array_merge(parent::attributeHints(), [
-            'db' => 'This is the ID of the DB application component that will be used by the migration tool.',
+            'db' => 'ID компонента DB приложения, который будет использовать миграция.',
             'migrationTable' => 'The name of the table for keeping applied migration information.',
         	'migrationPath' => 'The directory containing the migration classes. This can be either a path alias or a directory path.',
             'useTablePrefix' => 'Indicates whether the table names generated should consider the <code>tablePrefix</code> setting of the DB connection. For example, if the table name is <code>post</code> the generator wil return <code>{{%post}}</code>.'

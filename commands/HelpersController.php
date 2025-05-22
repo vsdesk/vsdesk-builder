@@ -26,20 +26,20 @@ class HelpersController extends Controller
 
     public function actionDropAllTables($db)
     {
-        $db = Yii::$app->get($db);
-        $tables = $db->schema->getTableNames();
+        // $db = Yii::$app->get($db);
+        // $tables = $db->schema->getTableNames();
 
-        if (!$tables) {
+        // if (!$tables) {
             echo 'nothing to drop.'. PHP_EOL;
             return 0;
-        }
+        // }
 
-        foreach ($tables as $table) {
-            $db->createCommand()->dropTable($table)->execute();
-            echo 'dropped table "' . $table . '".'. PHP_EOL;
-        }
+        // foreach ($tables as $table) {
+        //     $db->createCommand()->dropTable($table)->execute();
+        //     echo 'dropped table "' . $table . '".'. PHP_EOL;
+        // }
 
-        echo PHP_EOL. 'database should be empty now.' . PHP_EOL;
+        // echo PHP_EOL. 'database should be empty now.' . PHP_EOL;
     }
 
 

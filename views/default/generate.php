@@ -13,7 +13,7 @@ use yii\helpers\Url;
 
 <?php Modal::begin([
     'id' => 'generate-modal',
-    'options' => ['class' => 'modal modal-fullscreen fade', 'data-backdrop' => 'static'],
+    'options' => ['class' => 'modal fade', 'data-backdrop' => 'static'],
     'title' =>  '<h4>Terminal</h4>',
     'toggleButton' => $schema->readyToGenerate() ? 
     	['label' => '<span class="fui-play"></span> СГЕНЕРИРОВАТЬ', 'class' => 'btn btn-inverse mt20 mb20'] :
@@ -21,8 +21,8 @@ use yii\helpers\Url;
 ]); ?>
 
 <p class="jumbotron alert alert-danger text-center">
-	By hitting the <strong>СГЕНЕРИРОВАТЬ</strong> button you are goinig to <strong class="text-uppercase">destroy</strong> your <strong class="text-uppercase">database</strong> and most of <strong class="text-uppercase">your working files</strong>. This extension was designed to work on new builds. Use it with precaution.
-	<a href="#" onclick="$('#commands').toggle()">Click here to show/hide the full list of commands to execute.</a>
+	Нажимая кнопку <strong>СГЕНЕРИРОВАТЬ</strong> вы подтверджате что <strong class="text-uppercase">уничтожаете</strong> вашу <strong class="text-uppercase">базу данных</strong> и большинство <strong class="text-uppercase">ваших рабочих файлов</strong>. Расширение предназначено для новых билдов. Используйте с осторожностью!
+	<a href="#" onclick="$('#commands').toggle()">Кликните сюда чтобы увидеть список применяемых команд.</a>
 </p>
 
 <pre id="commands" style="display:none">
@@ -34,7 +34,7 @@ use yii\helpers\Url;
 </pre>
 
 <div class="text-center">
-	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	<button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
 	<button 
 		id="generateBtn"
 		type="button" 
